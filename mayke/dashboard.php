@@ -7,6 +7,31 @@ if(!$logged){
   die();
 }
 
+$devices = $_SESSION['devices'];
+
+//momento de conectarnos a db
+$conn = mysqli_connect("localhost","admin_cursoiot","121212","admin_cursoiot");
+
+
+
+$array = array();
+
+foreach ($devices as $device ) {
+  array_push($array,$device['devices_serie']);
+}
+
+
+
+$matches = implode(',', $array);
+
+
+$query = "SELECT * FROM `traffic_devices` WHERE `devices_serie` IN($matches)";
+$result = $conn->query($query);
+$traffics = $result->fetch_all(MYSQLI_ASSOC);
+
+//print_r($traffics);
+//die();
+
 ?>
 
 
@@ -117,7 +142,9 @@ if(!$logged){
             <i class="material-icons">&#xe5d2;</i>
           </a>
           <!-- / -->
-
+          <div class="">
+            <b id="display_new_access">  </b>
+          </div>
           <!-- Page title - Bind to $state's title -->
           <div class="mb-0 h5 no-wrap" ng-bind="$state.current.data.title" id="pageTitle"></div>
 
@@ -126,9 +153,8 @@ if(!$logged){
             <!-- link and dropdown -->
             <ul class="nav navbar-nav mr-auto">
               <li class="nav-item dropdown">
-                <a class="nav-link" href data-toggle="dropdown">
-                  <i class="fa fa-fw fa-plus text-muted"></i>
-                  <span>New</span>
+                <a  class="nav-link" href data-toggle="dropdown">
+
                 </a>
                 <div ui-include="'views/blocks/dropdown.new.html'"></div>
               </li>
@@ -187,9 +213,29 @@ if(!$logged){
         <!-- SECCION CENTRAL -->
         <div class="padding">
 
-          <!-- VALORES EN TIEMPO REAL -->
+          <!-- SWItCH1 y 2 -->
           <div class="row">
-            <div class="col-xs-12 col-sm-4">
+            <!-- SWItCH1 -->
+            <div class="col-xs-12 col-sm-9">
+              <div class="box p-a">
+                <div class="form-group row">
+
+                  <button onclick="command('open')" class="md-btn md-raised m-b-sm w-xs green" style="margin-left:25px">Abrir</button>
+                  <button onclick="command('close')" class="md-btn md-raised m-b-sm w-xs red"  style="margin-left:25px" >Cerrar</button>
+
+                  <div class="form-group" style="margin-left:25px">
+                    <select  id="device_id" class="form-control select2" ui-jp="select2" ui-options="{theme: 'bootstrap'}">
+                      <?php foreach ($devices as $device ) { ?>
+                        <option value="<?php echo  $device['devices_serie']?>">---><?php echo $device['devices_alias'] ?><---</option>
+                      <?php } ?>
+                    </select>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-3">
               <div class="box p-a">
                 <div class="pull-left m-r">
                   <span class="w-48 rounded  accent">
@@ -202,66 +248,47 @@ if(!$logged){
                 </div>
               </div>
             </div>
-            <div class="col-xs-6 col-sm-4">
-              <div class="box p-a">
-                <div class="pull-left m-r">
-                  <span class="w-48 rounded primary">
-                    <i class="fa fa-desktop"></i>
-                  </span>
-                </div>
-                <div class="clear">
-                  <h4 class="m-0 text-lg _300"><b id="display_temp2">-- </b><span class="text-sm"> C</span></h4>
-                  <small class="text-muted">Temp Pico: 70 C</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-6 col-sm-4">
-              <div class="box p-a">
-                <div class="pull-left m-r">
-                  <span class="w-48 rounded warn">
-                    <i class="fa fa-plug"></i>
-                  </span>
-                </div>
-                <div class="clear">
-                  <h4 class="m-0 text-lg _300"><b id="display_volt">-- </b><span class="text-sm"> V</span></h4>
-                  <small class="text-muted">Tensión Pico: 5.8 V</small>
-                </div>
-              </div>
-            </div>
+
+
           </div>
 
-          <!-- SWItCH1 y 2 -->
+          <!-- VALORES EN TIEMPO REAL -->
           <div class="row">
-            <!-- SWItCH1 -->
-            <div class="col-xs-12 col-sm-6">
-              <div class="box p-a">
-                <div class="form-group row">
-                  <label class="col-sm-2 form-control-label">LED1</label>
-                  <div class="col-sm-10">
-                    <label class="ui-switch ui-switch-md info m-t-xs">
-                      <input id="input_led1" onchange="process_led1()"  type="checkbox" >
-                      <i></i>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SWItCH2 -->
-              <div class="col-xs-12 col-sm-6">
-                <div class="box p-a">
-                  <div class="form-group row">
-                    <label class="col-sm-2 form-control-label">LED2</label>
-                    <div class="col-sm-10">
-                      <label class="ui-switch ui-switch-md info m-t-xs">
-                        <input id="input_led2" onchange="process_led2()" type="checkbox"  >
-                        <i></i>
-                      </label>
+            <div class="col-sm-6">
+                  <div class="box">
+                    <div class="box-header">
+                      <h2>Accesos</h2>
+                      <small>
+                        Encuentre los accessos a los portales del usuario <?php echo $_SESSION['users_email'] ?>.
+                      </small>
                     </div>
+                    <table class="table table-striped b-t">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Fecha</th>
+                          <th>Vecino</th>
+                          <th>Portal</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <?php foreach ($traffics as $traffic ): ?>
+                          <tr>
+                            <td><?php echo $traffic['traffic_id'] ?></td>
+                            <td><?php echo $traffic['traffic_date'] ?></td>
+                            <td><?php echo $traffic['hab_name'] ?></td>
+                            <td><?php echo $traffic['devices_alias'] ?></td>
+                          </tr>
+                        <?php endforeach; ?>
+
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-              </div>
           </div>
+
+
 
 
         </div>
@@ -449,22 +476,45 @@ class="p-a col-sm-6 lter">
 */
 
 
-function update_values(temp1, temp2, volts){
-  $("#display_temp1").html(temp1);
-  $("#display_temp2").html(temp2);
-  $("#display_volt").html(volts);
+function command(action){
+  var device_serie = $( "#device_id" ).val();
+  console.log(device_serie);
+  if(action == "open"){
+    client.publish(device_serie + "/command", 'open', (error) => {
+      console.log(error || 'Abriendo!!!')
+    });
+  }else{
+    client.publish(device_serie + "/command", 'close', (error) => {
+      console.log(error || 'Cerrando!!!')
+    });
+  }
 }
 
+var audio = new Audio('audio.mp3');
 function process_msg(topic, message){
-  // ej: "10,11,12"
-  if (topic == "values"){
-    var msg = message.toString();
-    var sp = msg.split(",");
-    var temp1 = sp[0];
-    var temp2 = sp[1];
-    var volts = sp[2];
-    update_values(temp1,temp2,volts);
+  var msg = message.toString();
+  var splitted_topic = topic.split("/");
+  var serial_number = splitted_topic[0];
+  var query = splitted_topic[1];
+
+  if (query == "temp"){
+    $("#display_temp1").html(msg);
   }
+
+  if (query == "access_query"){
+    $("#display_new_access").html("Nuevo acceso: " + msg);
+    audio.play();
+
+    setTimeout(function(){
+      $("#display_new_access").html("");
+    }, 3000);
+
+  }
+
+
+
+
+
 }
 
 function process_led1(){
@@ -501,9 +551,6 @@ function process_led2(){
 
 
 
-
-
-
 /*
 ******************************
 ****** CONEXION  *************
@@ -513,12 +560,10 @@ function process_led2(){
 // connect options
 const options = {
       connectTimeout: 4000,
-
       // Authentication
       clientId: 'iotmc',
       username: 'web_client',
       password: '121212',
-
       keepalive: 60,
       clean: true,
 }
@@ -528,29 +573,25 @@ var connected = false;
 // WebSocket connect url
 const WebSocket_URL = 'wss://cursoiot.ga:8094/mqtt'
 
-
 const client = mqtt.connect(WebSocket_URL, options)
 
 
 client.on('connect', () => {
     console.log('Mqtt conectado por WS! Exito!')
 
-    client.subscribe('values', { qos: 0 }, (error) => {
-      if (!error) {
-        console.log('Suscripción exitosa!')
-      }else{
-        console.log('Suscripción fallida!')
-      }
-    })
+    <?php foreach ($devices as $device) { ?>
+      client.subscribe('<?php echo $device['devices_serie'] ?>/access_query', { qos: 0 }, (error) => {})
+      client.subscribe('<?php echo $device['devices_serie'] ?>/temp', { qos: 0 }, (error) => {})
+    <?php } ?>
 
     // publish(topic, payload, options/callback)
     client.publish('fabrica', 'esto es un verdadero éxito', (error) => {
-      console.log(error || 'Mensaje enviado!!!')
+      console.log(error || 'Mensaje enviado!!!');
     })
 })
 
 client.on('message', (topic, message) => {
-  console.log('Mensaje recibido bajo tópico: ', topic, ' -> ', message.toString())
+  console.log('Mensaje recibido bajo tópico: ', topic, ' -> ', message.toString());
   process_msg(topic, message);
 })
 

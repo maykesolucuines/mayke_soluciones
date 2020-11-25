@@ -40,7 +40,16 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
       $msg .= "Exito!!!";
       $_SESSION['logged'] = true;
 
+      //RECUPERAMOS LOS DISPOSITIVOS DE ESTE USUARIO
+      $result = $conn->query("SELECT * FROM `devices` WHERE `devices_user_id` = '".$users[0]['users_id']."'");
+      $devices = $result->fetch_all(MYSQLI_ASSOC);
 
+      //guardamos los dispositivos en una variable de sesión
+      $_SESSION['devices'] = $devices;
+
+      //echo "<pre>";
+      //print_r($devices);
+      //die();
 
       echo '<meta http-equiv="refresh" content="2; url=dashboard.php">';
     }else{
