@@ -1,3 +1,59 @@
+<?php
+session_start();
+$_SESSION['logged'] = false;
+
+$msg="";
+$email="";
+
+if(isset($_POST['email']) && isset($_POST['password'])) {
+
+  if ($_POST['email']==""){
+    $msg.="Debe ingresar un email <br>";
+  }else if ($_POST['password']=="") {
+    $msg.="Debe ingresar la clave <br>";
+  }else {
+    $email = strip_tags($_POST['email']);
+    $password= sha1(strip_tags($_POST['password']));
+
+    //momento de conectarnos a db
+    $conn = mysqli_connect("localhost","admin_cursoiot","121212","admin_cursoiot");
+
+
+    if ($conn==false){
+      echo "Hubo un problema al conectarse a María DB";
+      die();
+    }
+
+    $result = $conn->query("SELECT * FROM `users` WHERE `users_email` = '".$email."' AND  `users_password` = '".$password."' ");
+    $users = $result->fetch_all(MYSQLI_ASSOC);
+
+
+    //cuento cuantos elementos tiene $tabla,
+    $count = count($users);
+
+    if ($count == 1){
+
+      //cargo datos del usuario en variables de sesión
+      $_SESSION['user_id'] = $users[0]['users_id'];
+      $_SESSION['users_email'] = $users[0]['users_email'];
+
+      $msg .= "Exito!!!";
+      $_SESSION['logged'] = true;
+
+
+
+      echo '<meta http-equiv="refresh" content="2; url=dashboard.php">';
+    }else{
+      $msg .= "Acceso denegado!!!";
+      $_SESSION['logged'] = false;
+    }
+  }
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +71,7 @@
   <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
-  
+
   <!-- style -->
   <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
   <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
@@ -50,8 +106,8 @@
         <div class="md-form-group float-label">
           <input type="password" class="md-input" ng-model="user.password" required>
           <label>Password</label>
-        </div>      
-        <div class="m-b-md">        
+        </div>
+        <div class="m-b-md">
           <label class="md-check">
             <input type="checkbox"><i class="primary"></i> Keep me signed in
           </label>
