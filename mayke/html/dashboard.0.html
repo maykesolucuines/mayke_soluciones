@@ -1,4 +1,4 @@
-login.php<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -15,7 +15,7 @@ login.php<!DOCTYPE html>
   <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
-
+  
   <!-- style -->
   <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
   <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
@@ -47,12 +47,12 @@ login.php<!DOCTYPE html>
       </div>
       <div flex class="hide-scroll">
         <nav class="scroll nav-active-primary">
-
+          
             <ul class="nav" ui-nav>
               <li class="nav-header hidden-folded">
                 <small class="text-muted">Main</small>
               </li>
-
+              
               <li>
                 <a href="dashboard.html" >
                   <span class="nav-icon">
@@ -63,7 +63,7 @@ login.php<!DOCTYPE html>
                   <span class="nav-text">Dashboard</span>
                 </a>
               </li>
-
+          
               <li>
                 <a>
                   <span class="nav-caret">
@@ -97,7 +97,7 @@ login.php<!DOCTYPE html>
                   </li>
                 </ul>
               </li>
-
+          
               <li>
                 <a>
                   <span class="nav-caret">
@@ -128,7 +128,7 @@ login.php<!DOCTYPE html>
                   </li>
                 </ul>
               </li>
-
+          
               <li>
                 <a href="widget.html" >
                   <span class="nav-icon">
@@ -139,11 +139,11 @@ login.php<!DOCTYPE html>
                   <span class="nav-text">Widgets</span>
                 </a>
               </li>
-
+          
               <li class="nav-header hidden-folded">
                 <small class="text-muted">Components</small>
               </li>
-
+          
               <li>
                 <a>
                   <span class="nav-caret">
@@ -247,7 +247,7 @@ login.php<!DOCTYPE html>
                   </li>
                 </ul>
               </li>
-
+          
               <li>
                 <a>
                   <span class="nav-caret">
@@ -303,7 +303,7 @@ login.php<!DOCTYPE html>
                     </a>
                   </li>
                   <li>
-                    <a href="login.php" >
+                    <a href="signin.html" >
                       <span class="nav-text">Sign In</span>
                     </a>
                   </li>
@@ -334,7 +334,7 @@ login.php<!DOCTYPE html>
                   </li>
                 </ul>
               </li>
-
+          
               <li>
                 <a>
                   <span class="nav-caret">
@@ -390,7 +390,7 @@ login.php<!DOCTYPE html>
                   </li>
                 </ul>
               </li>
-
+          
               <li>
                 <a>
                   <span class="nav-caret">
@@ -489,17 +489,17 @@ login.php<!DOCTYPE html>
                   </li>
                 </ul>
               </li>
-
+          
               <li class="nav-header hidden-folded">
                 <small class="text-muted">Help</small>
               </li>
-
+              
               <li class="hidden-folded" >
                 <a href="docs.html" >
                   <span class="nav-text">Documents</span>
                 </a>
               </li>
-
+          
             </ul>
         </nav>
       </div>
@@ -509,7 +509,7 @@ login.php<!DOCTYPE html>
     </div>
   </div>
   <!-- / aside -->
-
+  
   <!-- content -->
   <div id="content" class="app-content box-shadow-z0" role="main">
     <div class="app-header white box-shadow navbar-md">
@@ -519,10 +519,10 @@ login.php<!DOCTYPE html>
               <i class="material-icons">&#xe5d2;</i>
             </a>
             <!-- / -->
-
+        
             <!-- Page title - Bind to $state's title -->
             <div class="mb-0 h5 no-wrap" ng-bind="$state.current.data.title" id="pageTitle"></div>
-
+        
             <!-- navbar collapse -->
             <div class="collapse navbar-collapse" id="collapse">
               <!-- link and dropdown -->
@@ -535,12 +535,12 @@ login.php<!DOCTYPE html>
                   <div ui-include="'../views/blocks/dropdown.new.html'"></div>
                 </li>
               </ul>
-
+        
               <div ui-include="'../views/blocks/navbar.form.html'"></div>
               <!-- / -->
             </div>
             <!-- / navbar collapse -->
-
+        
             <!-- navbar right -->
             <ul class="nav navbar-nav ml-auto flex-row">
               <li class="nav-item dropdown pos-stc-xs">
@@ -659,17 +659,17 @@ login.php<!DOCTYPE html>
 			        <div class="box-body">
 			            <div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
 			              [
-			                {
-			                  data: [[1, 6.1], [2, 6.3], [3, 6.4], [4, 6.6], [5, 7.0], [6, 7.7], [7, 8.3]],
-			                  points: { show: true, radius: 0},
-			                  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0 }
+			                { 
+			                  data: [[1, 6.1], [2, 6.3], [3, 6.4], [4, 6.6], [5, 7.0], [6, 7.7], [7, 8.3]], 
+			                  points: { show: true, radius: 0}, 
+			                  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0 } 
 			                },
-			                {
-			                  data: [[1, 5.5], [2, 5.7], [3, 6.4], [4, 7.0], [5, 7.2], [6, 7.3], [7, 7.5]],
-			                  points: { show: true, radius: 0},
-			                  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0 }
+			                { 
+			                  data: [[1, 5.5], [2, 5.7], [3, 6.4], [4, 7.0], [5, 7.2], [6, 7.3], [7, 7.5]], 
+			                  points: { show: true, radius: 0}, 
+			                  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0 } 
 			                }
-			              ],
+			              ], 
 			              {
 			                colors: ['#0cc2aa','#fcc100'],
 			                series: { shadowSize: 3 },
@@ -809,15 +809,15 @@ login.php<!DOCTYPE html>
 	          <div class="box-body">
 	            <div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
 	              [
-	                { data: [[1, 3], [2, 2.6], [3, 3.2], [4, 3], [5, 3.5], [6, 3], [7, 3.5]],
-	                  points: { show: true, radius: 0},
-                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0.2 }
+	                { data: [[1, 3], [2, 2.6], [3, 3.2], [4, 3], [5, 3.5], [6, 3], [7, 3.5]], 
+	                  points: { show: true, radius: 0}, 
+                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0.2 } 
 	                },
-	                { data: [[1, 3.6], [2, 3.5], [3, 6], [4, 4], [5, 4.3], [6, 3.5], [7, 3.6]],
-	                  points: { show: true, radius: 0},
-                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0.1 }
+	                { data: [[1, 3.6], [2, 3.5], [3, 6], [4, 4], [5, 4.3], [6, 3.5], [7, 3.6]], 
+	                  points: { show: true, radius: 0}, 
+                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0.1 } 
 	                }
-	              ],
+	              ], 
 	              {
 	                colors: ['#fcc100','#0cc2aa'],
 	                series: { shadowSize: 3 },
@@ -864,7 +864,7 @@ login.php<!DOCTYPE html>
 	              [
 	                { data: [[1, 2], [2, 4], [3, 5], [4, 7], [5, 6], [6, 4], [7, 5], [8, 4]] },
 	                { data: [[1, 2], [2, 3], [3, 2], [4, 5], [5, 4], [6, 3], [7, 4], [8, 2]] }
-	              ],
+	              ], 
 	              {
 	                bars: { show: true, fill: true,  barWidth: 0.3, lineWidth: 2, order: 1, fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.2}] }, align: 'center'},
 	                colors: ['#0cc2aa','#fcc100'],
@@ -1104,7 +1104,7 @@ login.php<!DOCTYPE html>
 	                </div>
 	              </li>
 	              <li class="list-item">
-	                <div class="list-body">
+	                <div class="list-body">                   
 	                  <p><a href class="text-info">@Josh Long</a> Vestibulum ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam</p>
 	                  <small class="block text-muted"><i class="fa fa-fw fa-clock-o"></i> 2 hours ago</small>
 	                </div>
@@ -1270,7 +1270,7 @@ login.php<!DOCTYPE html>
         </div>
       </div>
     </div>
-
+    
     <div class="switcher box-color black lt" id="sw-demo">
       <a href ui-toggle-class="active" target="#sw-demo" class="box-color black lt text-color sw-btn">
         <i class="fa fa-list text-white"></i>
@@ -1309,7 +1309,7 @@ login.php<!DOCTYPE html>
             class="p-a col-sm-6 info">
             <span class="text-white">Five</span>
           </a>
-          <div
+          <div 
             class="p-a col-sm-6 lter">
             <span class="text">...</span>
           </div>
