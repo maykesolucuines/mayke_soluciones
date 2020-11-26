@@ -15,7 +15,7 @@
   <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
-  
+
   <!-- style -->
   <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
   <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
@@ -48,12 +48,12 @@
       </div>
       <div class="hide-scroll" data-flex>
           <nav class="scroll nav-light">
-            
+
               <ul class="nav" ui-nav>
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">Main</small>
                 </li>
-                
+
                 <li>
                   <a href="dashboard.html" >
                     <span class="nav-icon">
@@ -64,7 +64,7 @@
                     <span class="nav-text">Dashboard</span>
                   </a>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -98,7 +98,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -129,7 +129,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a href="widget.html" >
                     <span class="nav-icon">
@@ -140,11 +140,11 @@
                     <span class="nav-text">Widgets</span>
                   </a>
                 </li>
-            
+
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">Components</small>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -248,7 +248,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -304,7 +304,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="signin.html" >
+                      <a href="login.php" >
                         <span class="nav-text">Sign In</span>
                       </a>
                     </li>
@@ -335,7 +335,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -391,7 +391,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -490,17 +490,17 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">Help</small>
                 </li>
-                
+
                 <li class="hidden-folded" >
                   <a href="docs.html" >
                     <span class="nav-text">Documents</span>
                   </a>
                 </li>
-            
+
               </ul>
           </nav>
       </div>
@@ -520,7 +520,7 @@
     </div>
   </div>
   <!-- / -->
-  
+
   <!-- content -->
   <div id="content" class="app-content box-shadow-z0" role="main">
     <div class="app-header white box-shadow">
@@ -530,10 +530,10 @@
               <i class="material-icons">&#xe5d2;</i>
             </a>
             <!-- / -->
-        
+
             <!-- Page title - Bind to $state's title -->
             <div class="mb-0 h5 no-wrap" ng-bind="$state.current.data.title" id="pageTitle"></div>
-        
+
             <!-- navbar collapse -->
             <div class="collapse navbar-collapse" id="collapse">
               <!-- link and dropdown -->
@@ -546,12 +546,12 @@
                   <div ui-include="'../views/blocks/dropdown.new.html'"></div>
                 </li>
               </ul>
-        
+
               <div ui-include="'../views/blocks/navbar.form.html'"></div>
               <!-- / -->
             </div>
             <!-- / navbar collapse -->
-        
+
             <!-- navbar right -->
             <ul class="nav navbar-nav ml-auto flex-row">
               <li class="nav-item dropdown pos-stc-xs">
@@ -701,19 +701,19 @@
 	          	</div>
 	            <div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
 	              [
-	                { data: [[1, 3.6], [2, 3.5], [3, 6], [4, 4], [5, 4.3], [6, 3.5], [7, 3.6]], 
-	                  points: { show: true, radius: 0}, 
+	                { data: [[1, 3.6], [2, 3.5], [3, 6], [4, 4], [5, 4.3], [6, 3.5], [7, 3.6]],
+	                  points: { show: true, radius: 0},
                   	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 1 }
 	                },
-	                { data: [[1, 3], [2, 2.6], [3, 3.2], [4, 3], [5, 3.5], [6, 3], [7, 3.5]], 
-	                  points: { show: true, radius: 0}, 
-                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 1 } 
+	                { data: [[1, 3], [2, 2.6], [3, 3.2], [4, 3], [5, 3.5], [6, 3], [7, 3.5]],
+	                  points: { show: true, radius: 0},
+                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 1 }
 	                },
-	                { data: [[1, 2], [2, 1.6], [3, 2.4], [4, 2.1], [5, 1.7], [6, 1.5], [7, 1.7]], 
-	                  points: { show: true, radius: 0}, 
-                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 1 } 
+	                { data: [[1, 2], [2, 1.6], [3, 2.4], [4, 2.1], [5, 1.7], [6, 1.5], [7, 1.7]],
+	                  points: { show: true, radius: 0},
+                  	  splines: { show: true, tension: 0.45, lineWidth: 2, fill: 1 }
 	                }
-	              ], 
+	              ],
 	              {
 	                colors: ['#a88add','#0cc2aa','#fcc100'],
 	                series: { shadowSize: 3 },
@@ -769,7 +769,7 @@
 	            <div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
 	              [
 	                { data: [[1, 2], [2, 4], [3, 5], [4, 7], [5, 6], [6, 4], [7, 5], [8, 4]] }
-	              ], 
+	              ],
 	              {
 	                bars: { show: true, fill: true,  barWidth: 0.25, lineWidth: 1, fillColor: { colors: [{ opacity: 0.8 }, { opacity: 1}] }, align: 'center' },
 	                colors: ['#a88add'],
@@ -826,7 +826,7 @@
 		    	<div ui-jp="plot" ui-refresh="app.setting.color" ui-options="
 	              [
 	                { data: [[3, 1], [2, 2], [6, 3], [5, 4], [7, 5]] }
-	              ], 
+	              ],
 	              {
 	                bars: { horizontal: true, show: true, fill: true,  barWidth: 0.3, lineWidth: 1, fillColor: { colors: [{ opacity: 0.8 }, { opacity: 1}] }, align: 'center' },
 	                colors: ['#0cc2aa'],
@@ -864,7 +864,7 @@
 		            	</div>
 			            <div><a href>Broadcast web app mockup</a></div>
 			            <div class="text-sm">
-			            	<span class="text-muted"><strong>5</strong> tasks, <strong>3</strong> issues</span> 
+			            	<span class="text-muted"><strong>5</strong> tasks, <strong>3</strong> issues</span>
 			            	<span class="label"></span>
 			            </div>
 			          </div>
@@ -882,7 +882,7 @@
 		            	</div>
 			            <div><a href>GoodDesign Bootstrap 4 migration</a></div>
 			            <div class="text-sm">
-			            	<span class="text-muted"><strong>35</strong> tasks, <strong>6</strong> issues</span> 
+			            	<span class="text-muted"><strong>35</strong> tasks, <strong>6</strong> issues</span>
 			            	<span class="label"></span>
 			            </div>
 			          </div>
@@ -900,7 +900,7 @@
 		            	</div>
 			            <div><a href>#Hashtag android app develop</a></div>
 			            <div class="text-sm">
-			            	<span class="text-muted"><strong>52</strong> tasks, <strong>13</strong> issues</span> 
+			            	<span class="text-muted"><strong>52</strong> tasks, <strong>13</strong> issues</span>
 			            	<span class="label"></span>
 			            </div>
 			          </div>
@@ -918,7 +918,7 @@
 		            	</div>
 			            <div><a href>Google material design application</a></div>
 			            <div class="text-sm">
-			            	<span class="text-muted"><strong>15</strong> tasks, <strong>3</strong> issues</span> 
+			            	<span class="text-muted"><strong>15</strong> tasks, <strong>3</strong> issues</span>
 			            	<span class="label"></span>
 			            </div>
 			          </div>
@@ -936,7 +936,7 @@
 		            	</div>
 			            <div><a href>Facebook connection web application</a></div>
 			            <div class="text-sm">
-			            	<span class="text-muted"><strong>30</strong> tasks, <strong>5</strong> issues</span> 
+			            	<span class="text-muted"><strong>30</strong> tasks, <strong>5</strong> issues</span>
 			            	<span class="label"></span>
 			            </div>
 			          </div>
@@ -975,7 +975,7 @@
 		        <thead>
 		          <tr>
 		            <th style="width:60px;" class="text-center">Graph</th>
-		            <th>Item</th>                    
+		            <th>Item</th>
 		            <th style="width:70px;"></th>
 		          </tr>
 		        </thead>
@@ -998,7 +998,7 @@
 		              <i class="fa fa-level-up"></i> 20%
 		            </td>
 		          </tr>
-		          <tr>                    
+		          <tr>
 		            <td>
 		              <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'line', height:19, width:60, lineColor:'#0cc2aa', fillColor:'transparent'}" class="sparkline inline">loading...</div>
 		            </td>
@@ -1007,7 +1007,7 @@
 		              <i class="fa fa-level-down"></i> 5%
 		            </td>
 		          </tr>
-		          <tr>                    
+		          <tr>
 		            <td>
 		              <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'discrete', height:19, width:60, lineColor:'#6cc788'}" class="sparkline inline">loading...</div>
 		            </td>
@@ -1016,7 +1016,7 @@
 		              <i class="fa fa-level-down"></i> 20%
 		            </td>
 		          </tr>
-		          <tr>                    
+		          <tr>
 		            <td>
 		              <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'line', height:19, width:60, lineColor:'#fcc100', fillColor:'#fcc100'}" class="sparkline inline">loading...</div>
 		            </td>
@@ -1296,7 +1296,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="switcher box-color black lt" id="sw-demo">
       <a href ui-toggle-class="active" target="#sw-demo" class="box-color black lt text-color sw-btn">
         <i class="fa fa-list text-white"></i>
@@ -1335,7 +1335,7 @@
             class="p-a col-sm-6 info">
             <span class="text-white">Five</span>
           </a>
-          <div 
+          <div
             class="p-a col-sm-6 lter">
             <span class="text">...</span>
           </div>
