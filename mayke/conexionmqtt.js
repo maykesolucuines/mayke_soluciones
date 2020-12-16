@@ -4,6 +4,7 @@ topic_raiz           = "luces_FAMARPE"
 topic_conexion       = "/conexion"
 topic_variables      = "/datos_variables"
 topic_accion_botones = "/181994/actions/sw1"
+topic_datos_lamparas = "/datos_lamparas"
 
 // Mensajes
 mensaje_inicial = "Desconectado"
@@ -31,6 +32,7 @@ client.on('connect', () => {
   console.log('Conexion Exitosa')
   client.subscribe(topic_raiz + topic_variables)
   client.subscribe(topic_raiz + topic_conexion)
+  client.subscribe(topic_raiz + topic_datos_lamparas)
 
   client.publish(topic_raiz + topic_conexion,mensaje_inicial, (error) => {
     console.log(error || 'Publicacion Exitosa')
@@ -51,10 +53,81 @@ client.on('error', (error) => {
   console.log('Error de Conexion:', error)
 })
 
+// Recibir mensajes y verlos en el navegador
 client.on('message', (topic, message) => {
   console.log('receive message：', topic, message.toString())
+
+  if (topic == topic_raiz + "datos_lamparas"){
+    var splitted = message.toString().split(",");
+
+    var lampara1 = splitted[0];
+    var lampara2 = splitted[1];
+    var lampara3 = splitted[2];
+    var lampara4 = splitted[3];
+    var lampara5 = splitted[4];
+    var lampara6 = splitted[5];
+    var lampara7 = splitted[6];
+    var lampara8 = splitted[7];
+    var lampara9 = splitted[8];
+    var lampara10 = splitted[9];
+
+
+    if(lampara1 == "1"){
+      document.getElementById("led_1").setAttribute("stop-color","#ff0000");
+    }else{
+      document.getElementById("led_1").setAttribute("stop-color","#000000");
+    }
+    if(lampara2 == "1" ){
+
+    }else{
+
+    }
+    if(lampara3 == "1" ){
+
+    }else{
+
+    }
+    if(lampara4 == "1" ){
+
+    }else{
+
+    }
+    if(lampara5 == "1" ){
+
+    }else{
+
+    }
+    if(lampara6 == "1" ){
+
+    }else{
+
+    }
+    if(lampara7 == "1" ){
+
+    }else{
+
+    }
+    if(lampara8 == "1" ){
+
+    }else{
+
+    }
+    if(lampara9 == "1" ){
+
+    }else{
+
+    }
+    if(lampara10 == "1" ){
+
+    }else{
+    
+    }
+  }
+
 })
 
+
+// funcion de botones
 function enviarDatoMQTTbt1() {
   client.publish(topic_raiz + topic_accion_botones,resultado_1, (error) => {
     console.log(error || 'Publicacion Exitosa')
