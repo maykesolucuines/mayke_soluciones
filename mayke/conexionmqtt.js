@@ -57,7 +57,7 @@ client.on('error', (error) => {
 client.on('message', (topic, message) => {
   console.log('receive message：', topic, message.toString())
 
-  if (topic == topic_raiz + "datos_lamparas"){
+  if (topic == topic_raiz + "/datos_lamparas"){
     var splitted = message.toString().split(",");
 
     var lampara1 = splitted[0];
