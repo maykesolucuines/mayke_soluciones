@@ -73,9 +73,11 @@ client.on('message', (topic, message) => {
 
 
     if(lampara1 == "1"){
-      document.getElementById("led_1").setAttribute("stop-color","#ff0000");
+      document.getElementById("led1").setAttribute("stop-color", "#110000");
+      console.log(error || 'led uno encendido')
     }else{
-      document.getElementById("led_1").setAttribute("stop-color","#000000");
+      document.getElementById("led1").setAttribute("stop-color","#000000");
+      console.log(error || 'led uno apagado')
     }
     if(lampara2 == "1" ){
 
@@ -120,7 +122,7 @@ client.on('message', (topic, message) => {
     if(lampara10 == "1" ){
 
     }else{
-    
+
     }
   }
 
