@@ -229,12 +229,12 @@ function enviarDatoMQTTbt2() {
 }
 // funcion de botones
 function enviarDatoMQTTbt3() {
-  client.publish(topic_raiz + topic_accion_botones,resultado_1, (error) => {
+  client.publish(topic_raiz + topic_accion_botones + "sw2",resultado_1, (error) => {
     console.log(error || 'Publicacion Exitosa')
   })
 }
 function enviarDatoMQTTbt4() {
-  client.publish(topic_raiz + topic_accion_botones,resultado_2, (error) => {
+  client.publish(topic_raiz + topic_accion_botones + "sw2",resultado_2, (error) => {
     console.log(error || 'Publicacion Exitosa')
   })
 }
