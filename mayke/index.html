@@ -52,12 +52,52 @@
   <h1>SERVIDOR CASA</h1>
   <div>
   <button class="boton_1"  onclick="enviarDatoMQTTbt1();">Encender</button>
-  <button class="boton_2"  onclick="enviarDatoMQTTbt2();">Apagar ya</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt2();">Apagar</button>
 </div>
 <br>
 <div>
   <button class="boton_1"  onclick="enviarDatoMQTTbt3();">Encender</button>
-  <button class="boton_2"  onclick="enviarDatoMQTTbt4();">Apagar ya</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt4();">Apagar</button>
+</div>
+<br>
+<div>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt5();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt6();">Apagar</button>
+</div>
+<br>
+<div>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt7();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt8();">Apagar</button>
+</div>
+<br>
+<div>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt9();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt10();">Apagar</button>
+</div>
+<br>
+<div>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt11();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt12();">Apagar</button>
+</div>
+<br>
+<div>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt13();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt14();">Apagar</button>
+</div>
+<br>
+<div>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt15();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt16();">Apagar</button>
+</div>
+<br>
+<div>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt17();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt18();">Apagar</button>
+</div>
+<br>
+<div>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt19();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt20();">Apagar</button>
 </div>
   <svg width="100" height="75" viewBox= "0 0 640 480">
   <defs>
@@ -162,57 +202,73 @@ client.on('message', (topic, message) => {
 
     if(lampara1 == "1"){
       document.getElementById("led1").setAttribute("stop-color", "#550000");
-      console.log('led uno encendido')
+      console.log('led 1 encendido')
     }else{
       document.getElementById("led1").setAttribute("stop-color","#000000");
-      console.log('led uno apagado')
+      console.log('led 1 apagado')
     }
     if(lampara2 == "1" ){
       document.getElementById("led1").setAttribute("stop-color", "#550000");
-      console.log('led dos encendido')
+      console.log('led 2 encendido')
     }else{
-      document.getElementById("led1").setAttribute("stop-color", "#550000");
-      console.log('led dos apagado')
+      document.getElementById("led1").setAttribute("stop-color", "#000000");
+      console.log('led 2 apagado')
     }
     if(lampara3 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 3 encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#000000");
+      console.log('led 3 apagado')
     }
     if(lampara4 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 4 encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 4 apagado')
     }
     if(lampara5 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 5 encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 5 apagado')
     }
     if(lampara6 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 6 encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#000000");
+      console.log('led 6 apagado')
     }
     if(lampara7 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 7 encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#000000");
+      console.log('led 7 apagado')
     }
     if(lampara8 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 8 encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#000000");
+      console.log('led 8 apagado')
     }
     if(lampara9 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 9 encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#000000");
+      console.log('led 9 apagado')
     }
     if(lampara10 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led 10 encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#000000");
+      console.log('led 10 apagado')
     }
   }
 
@@ -241,7 +297,94 @@ function enviarDatoMQTTbt4() {
     console.log(error || 'Publicacion Exitosa')
   })
 }
-
+// funcion de botones
+function enviarDatoMQTTbt5() {
+  client.publish(topic_raiz + topic_accion_botones + "sw3",resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt6() {
+  client.publish(topic_raiz + topic_accion_botones + "sw3",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+// funcion de botones
+function enviarDatoMQTTbt7() {
+  client.publish(topic_raiz + topic_accion_botones + "sw4",resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt8() {
+  client.publish(topic_raiz + topic_accion_botones + "sw4",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+// funcion de botones
+function enviarDatoMQTTbt9() {
+  client.publish(topic_raiz + topic_accion_botones + "sw5",resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt10() {
+  client.publish(topic_raiz + topic_accion_botones + "sw5",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+// funcion de botones
+function enviarDatoMQTTbt11() {
+  client.publish(topic_raiz + topic_accion_botones + "sw6",resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt12() {
+  client.publish(topic_raiz + topic_accion_botones + "sw6",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+// funcion de botones
+function enviarDatoMQTTbt13() {
+  client.publish(topic_raiz + topic_accion_botones + "sw7",resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt14() {
+  client.publish(topic_raiz + topic_accion_botones + "sw7",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+// funcion de botones
+function enviarDatoMQTTbt15() {
+  client.publish(topic_raiz + topic_accion_botones + "sw8",resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt16() {
+  client.publish(topic_raiz + topic_accion_botones + "sw8",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+// funcion de botones
+function enviarDatoMQTTbt17() {
+  client.publish(topic_raiz + topic_accion_botones + "sw9",resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt18() {
+  client.publish(topic_raiz + topic_accion_botones + "sw9",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+// funcion de botones
+function enviarDatoMQTTbt19() {
+  client.publish(topic_raiz + topic_accion_botones + "sw10",resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt20() {
+  client.publish(topic_raiz + topic_accion_botones + "sw10",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
 </script>
 
 
