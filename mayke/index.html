@@ -54,6 +54,7 @@
   <button class="boton_1"  onclick="enviarDatoMQTTbt1();">Encender</button>
   <button class="boton_2"  onclick="enviarDatoMQTTbt2();">Apagar ya</button>
 </div>
+<br>
 <div>
   <button class="boton_1"  onclick="enviarDatoMQTTbt3();">Encender</button>
   <button class="boton_2"  onclick="enviarDatoMQTTbt4();">Apagar ya</button>
@@ -171,7 +172,7 @@ client.on('message', (topic, message) => {
       console.log('led dos encendido')
     }else{
       document.getElementById("led1").setAttribute("stop-color", "#550000");
-      console.log('led dos encendido')
+      console.log('led dos apagado')
     }
     if(lampara3 == "1" ){
 
