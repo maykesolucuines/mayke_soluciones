@@ -53,6 +53,8 @@
   <div>
   <button class="boton_1"  onclick="enviarDatoMQTTbt1();">Encender</button>
   <button class="boton_2"  onclick="enviarDatoMQTTbt2();">Apagar ya</button>
+  <button class="boton_1"  onclick="enviarDatoMQTTbt3();">Encender</button>
+  <button class="boton_2"  onclick="enviarDatoMQTTbt4();">Apagar ya</button>
 
   <svg width="100" height="75" viewBox= "0 0 640 480">
   <defs>
@@ -86,7 +88,7 @@
 topic_raiz           = "luces_FAMARPE"
 topic_conexion       = "/conexion"
 topic_variables      = "/datos_variables"
-topic_accion_botones = "/181994/actions/sw1"
+topic_accion_botones = "/181994/actions/"
 topic_datos_lamparas = "/datos_lamparas"
 
 // Mensajes
@@ -163,9 +165,11 @@ client.on('message', (topic, message) => {
       console.log('led uno apagado')
     }
     if(lampara2 == "1" ){
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led dos encendido')
     }else{
-
+      document.getElementById("led1").setAttribute("stop-color", "#550000");
+      console.log('led dos encendido')
     }
     if(lampara3 == "1" ){
 
@@ -214,11 +218,22 @@ client.on('message', (topic, message) => {
 
 // funcion de botones
 function enviarDatoMQTTbt1() {
-  client.publish(topic_raiz + topic_accion_botones,resultado_1, (error) => {
+  client.publish(topic_raiz + topic_accion_botones + "sw1",resultado_1, (error) => {
     console.log(error || 'Publicacion Exitosa')
   })
 }
 function enviarDatoMQTTbt2() {
+  client.publish(topic_raiz + topic_accion_botones + "sw1",resultado_2, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+// funcion de botones
+function enviarDatoMQTTbt3() {
+  client.publish(topic_raiz + topic_accion_botones,resultado_1, (error) => {
+    console.log(error || 'Publicacion Exitosa')
+  })
+}
+function enviarDatoMQTTbt4() {
   client.publish(topic_raiz + topic_accion_botones,resultado_2, (error) => {
     console.log(error || 'Publicacion Exitosa')
   })
