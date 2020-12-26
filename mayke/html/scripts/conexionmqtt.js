@@ -3,7 +3,7 @@
 topic_raiz           = "luces_FAMARPE"
 topic_conexion       = "/conexion"
 topic_variables      = "/datos_variables"
-topic_accion_botones = "/181994/actions/sw1"
+topic_accion_botones = "/actions/#"
 
 // Mensajes
 mensaje_inicial = "Desconectado"
@@ -31,6 +31,7 @@ client.on('connect', () => {
   console.log('Conexion Exitosa')
   client.subscribe(topic_raiz + topic_variables)
   client.subscribe(topic_raiz + topic_conexion)
+  client.subscribe(topic_raiz + topic_accion_botones)
 
   client.publish(topic_raiz + topic_conexion,mensaje_inicial, (error) => {
     console.log(error || 'Publicacion Exitosa')
@@ -51,10 +52,80 @@ client.on('error', (error) => {
   console.log('Error de Conexion:', error)
 })
 
+//recibir mensajes de la tarjeta luces central
 client.on('message', (topic, message) => {
   console.log('receive message：', topic, message.toString())
-})
 
+  if (topic == device_topic + "datos_lamparas"){
+  var splitted = message.toString().split(",");
+
+  var switch1 = splitted[0];
+  var switch2 = splitted[1];
+  var switch3 = splitted[2];
+  var switch4 = splitted[3];
+  var switch5 = splitted[4];
+  var switch6 = splitted[5];
+  var switch7 = splitted[6];
+  var switch8 = splitted[7];
+  var switch9 = splitted[8];
+  var switch10 = splitted[9];
+
+
+  if(switch1 == "1"){
+    $("#display_sw1").prop('checked', true);
+  }else{
+    $("#display_sw1").prop('checked',"");
+  }
+  if(switch2 == "1" ){
+    $("#display_sw2").prop('checked', true);
+  }else{
+    $("#display_sw2").prop('checked',"" );
+  }
+  if(switch3 == "1" ){
+    $("#display_sw3").prop('checked', true);
+  }else{
+    $("#display_sw3").prop('checked',"" );
+  }
+  if(switch4 == "1" ){
+    $("#display_sw4").prop('checked', true);
+  }else{
+    $("#display_sw4").prop('checked',"" );
+  }
+  if(switch5 == "1" ){
+    $("#display_sw5").prop('checked', true);
+  }else{
+    $("#display_sw5").prop('checked',"" );
+  }
+  if(switch6 == "1" ){
+    $("#display_sw6").prop('checked', true);
+  }else{
+    $("#display_sw6").prop('checked',"" );
+  }
+  if(switch7 == "1" ){
+    $("#display_sw7").prop('checked', true);
+  }else{
+    $("#display_sw7").prop('checked',"" );
+  }
+  if(switch8 == "1" ){
+    $("#display_sw8").prop('checked', true);
+  }else{
+    $("#display_sw8").prop('checked',"" );
+  }
+  if(switch9 == "1" ){
+    $("#display_sw9").prop('checked', true);
+  }else{
+    $("#display_sw9").prop('checked',"" );
+  }
+  if(switch10 == "1" ){
+    $("#display_sw10").prop('checked', true);
+  }else{
+    $("#display_sw10").prop('checked',"" );
+  }
+}
+
+
+})
+////////////////////////////////////////////////////////
 function enviarDatoMQTTbt1() {
   client.publish(topic_raiz + topic_accion_botones,resultado_1, (error) => {
     console.log(error || 'Publicacion Exitosa')
