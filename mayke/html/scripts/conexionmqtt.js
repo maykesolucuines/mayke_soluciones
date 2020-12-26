@@ -30,7 +30,7 @@ const client = mqtt.connect(WebSocket_URL, options)
 
 client.on('connect', () => {
   console.log('Conexion Exitosa')
-  client.subscribe(topic_raiz + topic_variables)
+  //client.subscribe(topic_raiz + topic_variables)
   client.subscribe(topic_raiz + topic_conexion)
   client.subscribe(topic_raiz + topic_accion_botones)
   client.subscribe(topic_raiz + topic_datos_lamparas)
