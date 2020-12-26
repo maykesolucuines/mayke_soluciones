@@ -58,6 +58,14 @@ client.on('error', (error) => {
 client.on('message', (topic, message) => {
   console.log('receive message：', topic, message.toString())
 
+  if (topic == topic_raiz + topic_conexion){
+    var splitted = message.toString().split(",");
+    var conex = splitted[0];
+
+    $("#display_conexion").html(conex);
+  }
+
+
   if (topic == topic_raiz + topic_datos_lamparas){
   var splitted = message.toString().split(",");
 
