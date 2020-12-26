@@ -4,6 +4,7 @@ topic_raiz           = "luces_FAMARPE"
 topic_conexion       = "/conexion"
 topic_variables      = "/datos_variables"
 topic_accion_botones = "/actions/#"
+topic_datos_lamparas = "/datos_lamparas"
 
 // Mensajes
 mensaje_inicial = "Desconectado"
@@ -32,6 +33,7 @@ client.on('connect', () => {
   client.subscribe(topic_raiz + topic_variables)
   client.subscribe(topic_raiz + topic_conexion)
   client.subscribe(topic_raiz + topic_accion_botones)
+  client.subscribe(topic_raiz + topic_datos_lamparas)
 
   client.publish(topic_raiz + topic_conexion,mensaje_inicial, (error) => {
     console.log(error || 'Publicacion Exitosa')
@@ -56,7 +58,7 @@ client.on('error', (error) => {
 client.on('message', (topic, message) => {
   console.log('receive message：', topic, message.toString())
 
-  if (topic == device_topic + "datos_lamparas"){
+  if (topic == topic_raiz + topic_datos_lamparas){
   var splitted = message.toString().split(",");
 
   var switch1 = splitted[0];
