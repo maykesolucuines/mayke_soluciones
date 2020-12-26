@@ -599,7 +599,7 @@
 
               <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw1_change()" type="checkbox" class="has-value" id="display_sw1">
                   <i class="blue"></i>
                   LAMPARA UNO
                 </label>
@@ -607,42 +607,39 @@
               </div>
               <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw2_change()" type="checkbox" class="has-value" id="display_sw2">
                   <i class="blue"></i>
                   LAMPARA DOS
                 </label>
-
               </div>
-              <div class="box p-a">
 
+              <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw3_change()" type="checkbox" class="has-value" id="display_sw3">
                   <i class="blue"></i>
                   LAMPARA TRES
                 </label>
-
               </div>
+
               <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw4_change()" type="checkbox" class="has-value" id="display_sw4">
                   <i class="blue"></i>
                   LAMPARA CUATRO
                 </label>
-
               </div>
-              <div class="box p-a">
 
+              <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw5_change()" type="checkbox" class="has-value" id="display_sw5">
                   <i class="blue"></i>
                   LAMPARA CINCO
                 </label>
-
               </div>
-              <div class="box p-a">
 
+              <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw6_change()" type="checkbox" class="has-value" id="display_sw6">
                   <i class="blue"></i>
                   LAMPARA SEIS
                 </label>
@@ -650,7 +647,7 @@
               </div>
               <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw7_change()" type="checkbox" class="has-value" id="display_sw7">
                   <i class="blue"></i>
                   LAMPARA SIETE
                 </label>
@@ -658,7 +655,7 @@
 
               <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw8_change()" type="checkbox" class="has-value" id="display_sw8">
                   <i class="blue"></i>
                   LAMPARA OCHO
                 </label>
@@ -666,19 +663,18 @@
 
               <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw9_change()" type="checkbox" class="has-value" id="display_sw9">
                   <i class="blue"></i>
                   LAMPARA NUEVE
                 </label>
               </div>
-              <div class="box p-a">
 
+              <div class="box p-a">
                 <label class="md-switch">
-                  <input type="checkbox" class="has-value">
+                  <input onchange="sw10_change()" type="checkbox" class="has-value" id="display_sw10">
                   <i class="blue"></i>
                   LAMPARA DIEZ
                 </label>
-
               </div>
 
             </div>
@@ -754,7 +750,7 @@
 
       <script src="scripts/app.js"></script>
 
-<!-- mis conexiones mqtt y datos -->
+      <!-- mis conexiones mqtt y datos -->
       <script src="scripts/mqtt.min.js" type="text/javascript"></script>
       <script src="scripts/conexionmqtt.js"></script>
 
