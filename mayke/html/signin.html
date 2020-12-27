@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="../assets/styles/app.css" type="text/css" />
   <!-- endbuild -->
   <link rel="stylesheet" href="../assets/styles/font.css" type="text/css" />
+
 </head>
 <body>
 
@@ -40,28 +41,34 @@
       </div>
     </div>
     <div class="p-a-md box-color r box-shadow-z1 text-color m-a">
-      <div class="m-b text-sm">
-        Sign in with your Flatkit Account
+      <div class="p-v-lg text-center">
+        Ingrese sus credenciales.
       </div>
 
-        <form action="login.php" name="form" method="POST">
+
+        <form acction="" id="form">
+
         <div class="md-form-group float-label">
-          <input type="email"   name="user"class="md-input" ng-model="user.email" required>
-          <label>Email</label>
+          <input  id="nombre" type="text"  class="md-input"required>
+          <label>Nombre</label>
         </div>
+
         <div class="md-form-group float-label">
-          <input type="password"  name="pass" class="md-input" ng-model="user.password" required>
-          <label>Password</label>
+          <input id="password" type="password"  class="md-input"  required>
+          <label>Clave</label>
         </div>
+
         <div class="m-b-md">
           <label class="md-check">
             <input type="checkbox"><i class="primary"></i> Keep me signed in
           </label>
         </div>
-        <button type="submit" class="btn primary btn-block p-x-md">Sign in</button>
-      </form>
-    </div>
 
+        <button type="submit" class="btn primary btn-block p-x-md"  onclick="enviarFormulario()">Ingresar</button>
+      </form>
+
+
+    </div>
     <div class="p-v-lg text-center">
       <div class="m-b"><a ui-sref="access.forgot-password" href="forgot-password.html" class="text-primary _600">Forgot password?</a></div>
       <div>Do not have an account? <a ui-sref="access.signup" href="signup.html" class="text-primary _600">Sign up</a></div>
@@ -74,6 +81,22 @@
 <!-- build:js scripts/app.html.js -->
 <!-- jQuery -->
   <script src="../libs/jquery/jquery/dist/jquery.js"></script>
+
+  <script src="scripts/mqtt.min.js" type="text/javascript"></script>
+  <script src="scripts/formularioenviar.js" type="text/javascript"></script>
+
+
+
+  <!-- mis conexiones mqtt y datos
+  <script src="scripts/mqtt.min.js" type="text/javascript"></script>
+  <script src="scripts/credenciales.js"></script>
+  <script src="scripts/formularioenviar.js" type="text/javascript"></script>
+
+  -->
+
+
+
+
 <!-- Bootstrap -->
   <script src="../libs/jquery/tether/dist/js/tether.min.js"></script>
   <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
