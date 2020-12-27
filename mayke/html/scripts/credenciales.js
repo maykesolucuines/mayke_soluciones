@@ -2,6 +2,7 @@
 
 topic_raiz           = "luces_FAMARPE"
 topic_credenciales   = "/credenciales"
+topic_comparar       = "/comparar"
 
 // Mensajes
 mensaje_inicial = "Credenciales"
@@ -27,6 +28,7 @@ const client = mqtt.connect(WebSocket_URL, options)
 client.on('connect', () => {
   console.log('Conexion Exitosa')
   client.subscribe(topic_raiz + topic_credenciales)
+  client.subscribe(topic_raiz + topic_comparar)
 
 
   client.publish(topic_raiz + topic_credenciales,mensaje_inicial, (error) => {
@@ -61,8 +63,3 @@ client.on('message', (topic, message) => {
 
 })
 ////////////////////////////////////////////////////////
-function enviarFormulario() {
-  client.publish(topic_raiz + topic_credenciales,nombre, (error) => {
-    console.log(error || 'Publicacion Exitosa')
-  })
-}
