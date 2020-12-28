@@ -1,11 +1,12 @@
 // connect options
 
 topic_raiz           = "luces_FAMARPE"
-topic_credenciales   = "/credenciales"
-topic_comparar       = "/comparar"
+topic_credenciales_TX   = "/credenciales/TX"
+topic_credenciales_RX   = "/credenciales/RX"
+
 
 // Mensajes
-mensaje_inicial = "Credenciales"
+// mensaje_inicial = "Credenciales"
 
 const options = {
   connectTimeout: 4000,
@@ -26,40 +27,39 @@ const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
 const client = mqtt.connect(WebSocket_URL, options)
 
 client.on('connect', () => {
-  console.log('Conexion Exitosa')
-  client.subscribe(topic_raiz + topic_credenciales)
-  client.subscribe(topic_raiz + topic_comparar)
+  console.log('Con Exitosa')
+  client.subscribe(topic_raiz + topic_credenciales_TX)
+  client.subscribe(topic_raiz + topic_credenciales_RX)
 
 
-  client.publish(topic_raiz + topic_credenciales,mensaje_inicial, (error) => {
-    console.log(error || 'Publicacion Exitosa')
-  })
+  //
+  // client.publish(topic_raiz + topic_credenciales,mensaje_inicial, (error) => {
+  //   console.log(error || 'Publicacion Exitosa')
+  // })
 
 })
 
+
 client.on('reconnect', (error) => {
   console.log('Reconectado MQTT:', error)
-
-  client.publish(topic_raiz + topic_credenciales,mensaje_inicial, (error) => {
-    console.log(error || 'Publicacion Exitosa')
-  })
-
 })
 
 client.on('error', (error) => {
   console.log('Error de Conexion:', error)
 })
 
-//recibir mensajes de la tarjeta luces central
-client.on('message', (topic, message) => {
-  console.log('receive message：', topic, message.toString())
 
-  if (topic == topic_raiz + topic_credenciales){
-    var splitted = message.toString().split(",");
-    var conex = splitted[0];
+  //recibir mensajes de la tarjeta luces central
+  client.on('message', (topic, message) => {
+    console.log('receive message：', topic, message.toString())
 
-    $("#display_conexion").html(conex);
-  }
+    if (topic == topic_raiz + topic_credenciales_RX){
+      var splitted = message.toString().split(",");
+      var autorizacion = splitted[0];
+      var ms_espera = splitted[1];
 
-})
-////////////////////////////////////////////////////////
+      $("#display_autorizacion").html(autorizacion);
+      $("#display_ms_espera").html(ms_espera);
+    }
+
+  })

@@ -40,13 +40,24 @@
           <div ui-include="'../views/blocks/navbar.brand.html'"></div>
         </div>
       </div>
+
       <div class="p-a-md box-color r box-shadow-z1 text-color m-a">
         <div class="p-v-lg text-center">
           Ingrese sus credenciales.
         </div>
 
+        <!-- ////////////////////////////// -->
 
-        <form acction="formularioenviar.js" class="form-register" onsubmit="validar();">
+        <div class="p-v-lg text-center">
+          <span id="display_autorizacion"></span>
+        </div>
+        <div class="p-v-lg text-center">
+          <span id="display_ms_espera"></span>
+        </div>
+
+        <!-- ///////////////////////////////////// -->
+
+        <!-- <form acction=""> -->
 
           <div class="md-form-group float-label">
             <input  id="nombre" type="text"  class="md-input" required>
@@ -58,21 +69,21 @@
             <label>Clave</label>
           </div>
 
-
-
           <div class="m-b-md">
             <label class="md-check">
               <input type="checkbox"><i class="primary"></i> Keep me signed in
             </label>
           </div>
 
-          <button type="submit" class="btn primary btn-block p-x-md">Ingresar</button>
-        </form>
+          <button  class="btn primary btn-block p-x-md"  onclick="validar();">Ingresar</button>
+        <!-- </form> -->
 
 
       </div>
       <div class="p-v-lg text-center">
-        <div class="m-b"><a ui-sref="access.forgot-password" href="forgot-password.html" class="text-primary _600">Forgot password?</a></div>
+        <div class="m-b">
+          <a ui-sref="access.forgot-password" href="" class="text-primary _600">Forgot password?</a>
+        </div>
         <div>Do not have an account? <a ui-sref="access.signup" href="signup.html" class="text-primary _600">Sign up</a></div>
       </div>
     </div>
