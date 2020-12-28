@@ -57,9 +57,16 @@ client.on('error', (error) => {
       var splitted = message.toString().split(",");
       var autorizacion = splitted[0];
       var ms_espera = splitted[1];
+      var enlase   =  splitted[2];
 
       $("#display_autorizacion").html(autorizacion);
       $("#display_ms_espera").html(ms_espera);
+      $("#display_enlase").html(enlase);
+
+      if(autorizacion == "Autorizado"){
+      window.location="https://maykesolucuines.github.io/mayke_soluciones/mayke/html/dashboard.html"
+      }
+
     }
 
   })
