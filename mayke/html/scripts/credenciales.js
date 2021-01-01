@@ -92,7 +92,7 @@ client.on('error', (error) => {
        $("#display_autorizacion").html(clave_autorizada);
       $("#display_ms_espera").html(nombre_autorizado);
 
-      if(nombre_autorizado == "mauricio"){
+      if(nombre_autorizado == "mauricio" && clave_autorizada == "12345"){
         window.location=enlase;
       }
 
