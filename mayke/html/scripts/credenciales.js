@@ -9,10 +9,10 @@ var nombre_acc = "";
 var clave_acc = "" ;
 
 var autorizacion = "";
-var enlase  = "";
+var enlase_recibido  = "";
 var nombre_autorizado = "";
 var clave_autorizada  = "";
-
+var enlase_final  = "";
 
 
 
@@ -63,6 +63,7 @@ client.on('error', (error) => {
   //recibir mensajes de la tarjeta luces central
   client.on('message', (topic, message) => {
 
+
     console.log('receive message：', topic, message.toString())
 
     if (topic == topic_raiz + topic_credenciales_acc){
@@ -74,10 +75,6 @@ client.on('error', (error) => {
       $("#display_ms_espera").html(clave_acc);
     }
 
-    if(nombre_autorizado == nombre && clave_autorizada == clave){
-    window.location=enlase;
-    }
-
 
 
 //------------------------------------------------------------------
@@ -86,13 +83,18 @@ client.on('error', (error) => {
     if (topic == topic_raiz + topic_credenciales_RX){
      splitted = message.toString().split(",");
       autorizacion = splitted[0];
-      mensaje   =  splitted[1];
-      enlase   =  splitted[1];
-       // nombre_autorizado = splitted[2];
-       // clave_autorizada   =  splitted[3];
 
-       $("#display_autorizacion").html(autorizacion);
-      $("#display_ms_espera").html(mensaje);
+      nombre_autorizado =  splitted[1];
+      clave_autorizada  =  splitted[2];
+      enlase   =  splitted[3];
+
+
+       $("#display_autorizacion").html(clave_autorizada);
+      $("#display_ms_espera").html(nombre_autorizado);
+
+      if(nombre_autorizado == "mauricio"){
+        window.location=enlase;
+      }
 
     }
 
