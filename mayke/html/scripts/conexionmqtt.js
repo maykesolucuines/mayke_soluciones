@@ -1,6 +1,6 @@
   // connect options
 
-  topic_raiz           = "luces_FAMARPE"
+  topic_raiz           = "Mercado_Luces"
   topic_conexion       = "/conexion"
   topic_variables      = "/datos_variables"
   topic_accion_botones = "/actions/#"
