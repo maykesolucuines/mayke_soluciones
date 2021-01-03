@@ -1,6 +1,6 @@
 // connect options
 
-topic_raiz              = "luces_FAMARPE"
+topic_raiz              = "Mercado_Luces"
 topic_credenciales_acc  = "/credenciales/acceso"
 topic_credenciales_TX   = "/credenciales/TX"
 topic_credenciales_RX   = "/credenciales/RX"
@@ -92,7 +92,7 @@ client.on('error', (error) => {
        $("#display_autorizacion").html(clave_autorizada);
       $("#display_ms_espera").html(nombre_autorizado);
 
-      if(nombre_autorizado == "mauricio" && clave_autorizada == "12345"){
+      if(nombre_autorizado == "Mauricio" && clave_autorizada == "12345"){
         window.location=enlase;
       }
 
