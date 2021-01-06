@@ -1,6 +1,13 @@
   // connect options
 
-  topic_raiz           = "Mercado_Luces"
+  // topic_raiz           = "Mercado_Luces"
+  // topic_conexion       = "/conexion"
+  // topic_variables      = "/datos_variables"
+  // topic_accion_botones = "/actions/#"
+  // topic_datos_lamparas = "/datos_lamparas"
+
+
+  topic_raiz           = " g8g7zIGSSeyRQG1"
   topic_conexion       = "/conexion"
   topic_variables      = "/datos_variables"
   topic_accion_botones = "/actions/#"
@@ -14,11 +21,23 @@
     connectTimeout: 4000,
     // Authentication
     clientId:  " WEB  FAM-MERCADO--->> " + Math.floor((Math.random() * 1000000) + 1),
-    username: 'mayke_iot',
-    password: 'Mk121988181994',
+    username: 'eEvBWk8Ugzrz1fU',
+    password: 'gooY5cMfsbZkK1D',
     keepalive: 60,
     clean: true,
   }
+
+///////////////////
+// const options = {
+//   connectTimeout: 4000,
+//   // Authentication
+//   clientId:  " WEB  FAM-MERCADO--->> " + Math.floor((Math.random() * 1000000) + 1),
+//   username: 'mayke_iot',
+//   password: 'Mk121988181994',
+//   keepalive: 60,
+//   clean: true,
+// }
+
   // WebSocket connect url
   const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
 
