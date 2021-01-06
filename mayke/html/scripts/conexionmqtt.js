@@ -7,7 +7,7 @@
   // topic_datos_lamparas = "/datos_lamparas"
 
 
-  topic_raiz           = " g8g7zIGSSeyRQG1"
+  topic_raiz           = "g8g7zIGSSeyRQG1"
   topic_conexion       = "/conexion"
   topic_variables      = "/datos_variables"
   topic_accion_botones = "/actions/#"
