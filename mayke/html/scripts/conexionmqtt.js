@@ -39,7 +39,7 @@
 const options = {
   connectTimeout: 4000,
   // Authentication
-  clientId:  " WEB  FAM-MERCADO--->> " + Math.floor((Math.random() * 1000000) + 1),
+  clientId:  " WEB FAM-MERCADO--->> " + Math.floor((Math.random() * 1000000) + 1),
   username: 'IEaIs3jgA4yh40Z',
   password: 'o6Bp9QHPesIEglE',
   keepalive: 60,
