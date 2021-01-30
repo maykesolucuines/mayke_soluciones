@@ -25,7 +25,7 @@
 ///////////////////
 
 
-  topic_raiz           = "Mercado_Luces"
+  topic_raiz           = "u4iEMKI51iaAzfA"
   topic_conexion       = "/conexion"
   topic_variables      = "/datos_variables"
   topic_accion_botones = "/actions/#"
@@ -40,8 +40,8 @@ const options = {
   connectTimeout: 4000,
   // Authentication
   clientId:  " WEB  FAM-MERCADO--->> " + Math.floor((Math.random() * 1000000) + 1),
-  username: 'mayke_iot',
-  password: 'Mk121988181994',
+  username: 'IEaIs3jgA4yh40Z',
+  password: 'o6Bp9QHPesIEglE',
   keepalive: 60,
   clean: true,
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Flatkit - HTML Version | Bootstrap 4 Web App Kit with AngularJS</title>
+  <title>MAYKE_SOLUCIONES calendario</title>
   <meta name="description" content="Admin, Dashboard, Bootstrap, Bootstrap 4, Angular, AngularJS" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
   <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" sizes="196x196" href="../assets/images/logo.png">
-  
+
   <!-- style -->
   <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
   <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
@@ -48,12 +48,12 @@
       </div>
       <div class="hide-scroll" data-flex>
           <nav class="scroll nav-light">
-            
+
               <ul class="nav" ui-nav>
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">Main</small>
                 </li>
-                
+
                 <li>
                   <a href="dashboard.html" >
                     <span class="nav-icon">
@@ -64,7 +64,7 @@
                     <span class="nav-text">Dashboard</span>
                   </a>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -98,7 +98,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -129,7 +129,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a href="widget.html" >
                     <span class="nav-icon">
@@ -140,11 +140,11 @@
                     <span class="nav-text">Widgets</span>
                   </a>
                 </li>
-            
+
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">Components</small>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -248,7 +248,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -335,7 +335,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -391,7 +391,7 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li>
                   <a>
                     <span class="nav-caret">
@@ -490,17 +490,17 @@
                     </li>
                   </ul>
                 </li>
-            
+
                 <li class="nav-header hidden-folded">
                   <small class="text-muted">Help</small>
                 </li>
-                
+
                 <li class="hidden-folded" >
                   <a href="docs.html" >
                     <span class="nav-text">Documents</span>
                   </a>
                 </li>
-            
+
               </ul>
           </nav>
       </div>
@@ -520,7 +520,7 @@
     </div>
   </div>
   <!-- / -->
-  
+
   <!-- content -->
   <div id="content" class="app-content box-shadow-z0" role="main">
     <div class="app-header white box-shadow">
@@ -530,10 +530,10 @@
               <i class="material-icons">&#xe5d2;</i>
             </a>
             <!-- / -->
-        
+
             <!-- Page title - Bind to $state's title -->
             <div class="mb-0 h5 no-wrap" ng-bind="$state.current.data.title" id="pageTitle"></div>
-        
+
             <!-- navbar collapse -->
             <div class="collapse navbar-collapse" id="collapse">
               <!-- link and dropdown -->
@@ -546,12 +546,12 @@
                   <div ui-include="'../views/blocks/dropdown.new.html'"></div>
                 </li>
               </ul>
-        
+
               <div ui-include="'../views/blocks/navbar.form.html'"></div>
               <!-- / -->
             </div>
             <!-- / navbar collapse -->
-        
+
             <!-- navbar right -->
             <ul class="nav navbar-nav ml-auto flex-row">
               <li class="nav-item dropdown pos-stc-xs">
@@ -597,13 +597,13 @@
 <div class="padding">
     <div class="row m-b">
       <div class="col-sm-4 m-b-sm">
-        <button type="button" class="btn btn-sm white" id="todayview">today</button>
+        <button type="button" class="btn btn-sm white" id="todayview">Hoy</button>
       </div>
       <div class="col-sm-8 text-sm-right">
         <div class="btn-group m-l-xs">
-          <button class="btn btn-sm white" id="dayview">Day</button>
-          <button class="btn btn-sm white" id="weekview">Week</button>
-          <button class="btn btn-sm white" id="monthview">Month</button>
+          <button class="btn btn-sm white" id="dayview">Dia</button>
+          <button class="btn btn-sm white" id="weekview">Semana</button>
+          <button class="btn btn-sm white" id="monthview">Mes</button>
         </div>
       </div>
     </div>
@@ -613,7 +613,7 @@
           center: 'title',
           right: 'next'
         },
-        defaultDate: '2015-12-12',
+        defaultDate: '2021-01-01',
         editable: true,
         eventLimit: false,
         events: [
@@ -778,7 +778,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="switcher box-color black lt" id="sw-demo">
       <a href ui-toggle-class="active" target="#sw-demo" class="box-color black lt text-color sw-btn">
         <i class="fa fa-list text-white"></i>
@@ -817,7 +817,7 @@
             class="p-a col-sm-6 info">
             <span class="text-white">Five</span>
           </a>
-          <div 
+          <div
             class="p-a col-sm-6 lter">
             <span class="text">...</span>
           </div>
