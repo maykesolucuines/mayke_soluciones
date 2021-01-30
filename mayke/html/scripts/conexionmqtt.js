@@ -49,8 +49,8 @@ const options = {
   // WebSocket connect url
 
 
-  // const WebSocket_URL = 'wss://ioticos.org:8094/mqtt'
-  const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
+   const WebSocket_URL = 'wss://ioticos.org:8094/mqtt'
+  //const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
 
   // TCP/TLS connect url
   //const TCP_URL = 'mqtt://broker.shiftr.io:443'
