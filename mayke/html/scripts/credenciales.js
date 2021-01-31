@@ -67,7 +67,17 @@ client.on('error', (error) => {
 
     console.log('receive message：', topic, message.toString())
 
-    if (topic == topic_raiz + topic_credenciales_acc){
+    // if (topic == topic_raiz + topic_credenciales_acc){
+    //   var splitted = message.toString().split(",");
+    //   nombre_acc = splitted[0];
+    //   clave_acc = splitted[1];
+    //
+    //   $("#display_autorizacion").html(nombre_acc);
+    //   $("#display_ms_espera").html(clave_acc);
+    // }
+
+
+    if (topic == topic_raiz + topic_credenciales_RX){
       var splitted = message.toString().split(",");
       nombre_acc = splitted[0];
       clave_acc = splitted[1];
@@ -89,7 +99,7 @@ client.on('error', (error) => {
       clave_autorizada  =  splitted[2];
       enlase   =  splitted[3];
 
-      // 
+      //
       //  $("#display_autorizacion").html(clave_autorizada);
       // $("#display_ms_espera").html(nombre_autorizado);
 
