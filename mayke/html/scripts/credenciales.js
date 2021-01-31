@@ -1,6 +1,6 @@
 // connect options
 
-topic_raiz              = "Mercado_Luces"
+topic_raiz              = "u4iEMKI51iaAzfA"
 topic_credenciales_acc  = "/credenciales/acceso"
 topic_credenciales_TX   = "/credenciales/TX"
 topic_credenciales_RX   = "/credenciales/RX"
@@ -23,13 +23,14 @@ const options = {
   connectTimeout: 4000,
   // Authentication
   clientId:  " CREDENCIALES --->> " + Math.floor((Math.random() * 1000000) + 1),
-  username: 'mayke_iot',
-  password: 'Mk121988181994',
+  username: 'IEaIs3jgA4yh40Z',
+  password: 'o6Bp9QHPesIEglE',
   keepalive: 60,
   clean: true,
 }
 // WebSocket connect url
-const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
+const WebSocket_URL = 'wss://ioticos.org:8094/mqtt'
+//const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
 
 // TCP/TLS connect url
 //const TCP_URL = 'mqtt://broker.shiftr.io:443'
