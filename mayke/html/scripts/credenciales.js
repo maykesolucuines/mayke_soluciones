@@ -89,9 +89,9 @@ client.on('error', (error) => {
       clave_autorizada  =  splitted[2];
       enlase   =  splitted[3];
 
-
-       $("#display_autorizacion").html(clave_autorizada);
-      $("#display_ms_espera").html(nombre_autorizado);
+      // 
+      //  $("#display_autorizacion").html(clave_autorizada);
+      // $("#display_ms_espera").html(nombre_autorizado);
 
       if(nombre_autorizado == "Mauricio" && clave_autorizada == "12345"){
         window.location=enlase;
