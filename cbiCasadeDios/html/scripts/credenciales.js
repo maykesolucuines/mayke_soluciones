@@ -1,6 +1,6 @@
 // connect options
 
-topic_raiz              = "u4iEMKI51iaAzfA"
+topic_raiz              = "iBZLr6jafzECZZA"
 topic_credenciales_acc  = "/credenciales/acceso"
 topic_credenciales_TX   = "/credenciales/TX"
 topic_credenciales_RX   = "/credenciales/RX"
@@ -23,8 +23,8 @@ const options = {
   connectTimeout: 4000,
   // Authentication
   clientId:  " CREDENCIALES --->> " + Math.floor((Math.random() * 1000000) + 1),
-  username: 'IEaIs3jgA4yh40Z',
-  password: 'o6Bp9QHPesIEglE',
+  username: 'YTtP6yJ9ftmqkXf',
+  password: '0krbagTaQqYxzD6',
   keepalive: 60,
   clean: true,
 }
