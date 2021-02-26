@@ -39,14 +39,14 @@ const WebSocket_URL = 'wss://ioticos.org:8094/mqtt'
 const client = mqtt.connect(WebSocket_URL, options)
 
 client.on('connect', () => {
-  console.log('Con Exitosa')
+  console.log('Conexion Exitosa')
   client.subscribe(topic_raiz + topic_credenciales_TX)
   client.subscribe(topic_raiz + topic_credenciales_RX)
   client.subscribe(topic_raiz + topic_credenciales_acc)
 
 
   client.publish(topic_raiz + topic_credenciales_acc,mensaje_inicial, (error) => {
-    console.log(error || 'Publicacion Exitosa')
+    console.log(error || 'Publicacion Mensaje Inicial')
   })
 
 })
@@ -65,7 +65,7 @@ client.on('error', (error) => {
   client.on('message', (topic, message) => {
 
 
-    console.log('receive message：', topic, message.toString())
+    console.log('Mensaje Recibido： ', topic, message.toString())
 
     // if (topic == topic_raiz + topic_credenciales_acc){
     //   var splitted = message.toString().split(",");
