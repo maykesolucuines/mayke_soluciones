@@ -1,9 +1,10 @@
 // connect options
 
-topic_raiz              = "iBZLr6jafzECZZA"
-topic_credenciales_acc  = "/credenciales/acceso"
-topic_credenciales_TX   = "/credenciales/TX"
-topic_credenciales_RX   = "/credenciales/RX"
+topic_raiz                   = "iBZLr6jafzECZZA"
+topic_credenciales_acc       = "/credenciales/acceso"
+topic_credenciales_TX        = "/credenciales/TX"
+topic_credenciales_RX        = "/credenciales/RX"
+topic_conexion               = "/conexion"
 
 var nombre_acc = "";
 var clave_acc = "" ;
@@ -13,8 +14,6 @@ var enlase_recibido  = "";
 var nombre_autorizado = "";
 var clave_autorizada  = "";
 var enlase_final  = "";
-
-
 
 // Mensajes
 mensaje_inicial = "Credenciales"
@@ -43,7 +42,11 @@ client.on('connect', () => {
   client.subscribe(topic_raiz + topic_credenciales_TX)
   client.subscribe(topic_raiz + topic_credenciales_RX)
   client.subscribe(topic_raiz + topic_credenciales_acc)
+  client.subscribe(topic_raiz + topic_conexion)
 
+  client.publish(topic_raiz + topic_conexion,'Desconectado', (error) => {
+    console.log(error || 'Publicacion Mensaje Inicial')
+  })
 
   client.publish(topic_raiz + topic_credenciales_acc,mensaje_inicial, (error) => {
     console.log(error || 'Publicacion Mensaje Inicial')
@@ -77,6 +80,14 @@ client.on('error', (error) => {
     // }
 
 
+    if (topic == topic_raiz + topic_conexion){
+      var splitted = message.toString().split(",");
+      conexion_tarjeta = splitted[0];
+
+      $("#display_conexion_tarjeta").html(conexion_tarjeta);
+    }
+
+
     if (topic == topic_raiz + topic_credenciales_RX){
       var splitted = message.toString().split(",");
       nombre_acc = splitted[0];
@@ -86,10 +97,7 @@ client.on('error', (error) => {
       $("#display_ms_espera").html(clave_acc);
     }
 
-
-
 //------------------------------------------------------------------
-
 
     if (topic == topic_raiz + topic_credenciales_RX){
      splitted = message.toString().split(",");
