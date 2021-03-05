@@ -32,7 +32,7 @@
   topic_datos_lamparas = "/datos_lamparas"
 
   // // Mensajes
-  mensaje_inicial = "Desconectado"
+  mensaje_inicial = "Conectado"
   resultado_1 = "1"
   resultado_2 = "0"
 
