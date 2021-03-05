@@ -44,7 +44,7 @@ client.on('connect', () => {
   client.subscribe(topic_raiz + topic_credenciales_acc)
   client.subscribe(topic_raiz + topic_conexion)
 
-  client.publish(topic_raiz + topic_conexion,'Conectado', (error) => {
+  client.publish(topic_raiz + topic_conexion,'Desconectado', (error) => {
     console.log(error || 'Publicacion Mensaje Inicial')
   })
 
