@@ -39,16 +39,13 @@ const client = mqtt.connect(WebSocket_URL, options)
 
 client.on('connect', () => {
   console.log('Conexion Exitosa')
+
+  client.subscribe(topic_raiz + topic_conexion)
+  client.subscribe(topic_raiz + topic_credenciales_acc)
   client.subscribe(topic_raiz + topic_credenciales_TX)
   client.subscribe(topic_raiz + topic_credenciales_RX)
-  client.subscribe(topic_raiz + topic_credenciales_acc)
-  client.subscribe(topic_raiz + topic_conexion)
 
   client.publish(topic_raiz + topic_conexion,'Desconectado', (error) => {
-    console.log(error || 'Publicacion Mensaje Inicial')
-  })
-
-  client.publish(topic_raiz + topic_credenciales_acc,mensaje_inicial, (error) => {
     console.log(error || 'Publicacion Mensaje Inicial')
   })
 
@@ -67,17 +64,7 @@ client.on('error', (error) => {
   //recibir mensajes de la tarjeta luces central
   client.on('message', (topic, message) => {
 
-
     console.log('Mensaje Recibido： ', topic, message.toString())
-
-    // if (topic == topic_raiz + topic_credenciales_acc){
-    //   var splitted = message.toString().split(",");
-    //   nombre_acc = splitted[0];
-    //   clave_acc = splitted[1];
-    //
-    //   $("#display_autorizacion").html(nombre_acc);
-    //   $("#display_ms_espera").html(clave_acc);
-    // }
 
 
     if (topic == topic_raiz + topic_conexion){
@@ -88,33 +75,35 @@ client.on('error', (error) => {
     }
 
 
-    if (topic == topic_raiz + topic_credenciales_RX){
-      var splitted = message.toString().split(",");
-      nombre_acc = splitted[0];
-      clave_acc = splitted[1];
-
-      $("#display_autorizacion").html(nombre_acc);
-      $("#display_ms_espera").html(clave_acc);
-    }
-
 //------------------------------------------------------------------
 
     if (topic == topic_raiz + topic_credenciales_RX){
      splitted = message.toString().split(",");
-      autorizacion = splitted[0];
+      autorizacion = splitted[0]
+      mensaje = splitted[1];
 
-      nombre_autorizado =  splitted[1];
-      clave_autorizada  =  splitted[2];
-      enlase   =  splitted[3];
-
-      //
-      //  $("#display_autorizacion").html(clave_autorizada);
-      // $("#display_ms_espera").html(nombre_autorizado);
-
-      if(nombre_autorizado == "Mauricio" && clave_autorizada == "12345"){
-        window.location=enlase;
-      }
+      $("#display_autorizacion").html(autorizacion);
+      $("#display_ms_espera").html(mensaje);
 
     }
+    if (topic == topic_raiz + topic_credenciales_acc){
+         splitted = message.toString().split(",");
+
+          nombre_autorizado =  splitted[0];
+          clave_autorizada  =  splitted[1];
+          autorizado_nombre =  splitted[2];
+          autorizada_clave  =  splitted[3];
+          enlase   =  splitted[4];
+
+          $("#display_autorizacion").html(autorizacion);
+          $("#display_ms_espera").html(mensaje);
+
+
+          if(nombre_autorizado == autorizado_nombre && clave_autorizada == autorizada_clave){
+            window.location=enlase;
+          }
+
+        }
+
 
   })
