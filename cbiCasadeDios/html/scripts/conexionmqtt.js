@@ -25,7 +25,7 @@
 ///////////////////
 
 
-  topic_raiz           = "iBZLr6jafzECZZA"
+  topic_raiz           = "ldDIpWTlbADbYJI"
   topic_conexion       = "/conexion"
   topic_variables      = "/datos_variables"
   topic_accion_botones = "/actions/#"
@@ -40,8 +40,8 @@ const options = {
   connectTimeout: 4000,
   // Authentication
   clientId:  " WEB FAM-MERCADO--->> " + Math.floor((Math.random() * 1000000) + 1),
-  username: 'YTtP6yJ9ftmqkXf',
-  password: '0krbagTaQqYxzD6',
+  username: 'oTmbjbVfGi0n5wl',
+  password: 'QqMxZJxOk1tgBPJ',
   keepalive: 60,
   clean: true,
 }
@@ -50,7 +50,8 @@ const options = {
 
    // const WebSocket_URL = 'wss://ioticos.org:8094/mqtt'
   //const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
-  const WebSocket_URL = 'wss://broker.hivemq.com:8000/mqtt'
+  const WebSocket_URL = 'ws://broker.hivemq.com:8000/mqtt'
+
 
   // TCP/TLS connect url
   //const TCP_URL = 'mqtt://broker.shiftr.io:443'

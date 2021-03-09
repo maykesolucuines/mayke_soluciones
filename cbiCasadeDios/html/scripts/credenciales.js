@@ -1,6 +1,6 @@
 // connect options
 
-topic_raiz                   = "iBZLr6jafzECZZA"
+topic_raiz                   = "ldDIpWTlbADbYJI"
 topic_credenciales_acc       = "/credenciales/acceso"
 topic_credenciales_TX        = "/credenciales/TX"
 topic_credenciales_RX        = "/credenciales/RX"
@@ -22,15 +22,15 @@ const options = {
   connectTimeout: 4000,
   // Authentication
   clientId:  " CREDENCIALES --->> " + Math.floor((Math.random() * 1000000) + 1),
-  username: 'YTtP6yJ9ftmqkXf',
-  password: '0krbagTaQqYxzD6',
+  username: 'oTmbjbVfGi0n5wl',
+  password: 'QqMxZJxOk1tgBPJ',
   keepalive: 60,
   clean: true,
 }
 // WebSocket connect url
 // const WebSocket_URL = 'wss://ioticos.org:8094/mqtt'
 //const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
-const WebSocket_URL = 'wss://broker.hivemq.com:8000/mqtt'
+const WebSocket_URL = 'ws://broker.hivemq.com:8000/mqtt'
 
 
 
