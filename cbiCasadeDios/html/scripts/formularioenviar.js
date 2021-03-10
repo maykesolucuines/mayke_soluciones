@@ -13,12 +13,12 @@ function validar(){
         console.log(error || 'FORMULARIO ENVIADO')
         // window.location=enlase_final;
 
-        setTimeout(function(){mostrarAviso()},3000); // 3000ms = 3s
+        // setTimeout(function(){mostrarAviso()},3000); // 3000ms = 3s
     })
 }
 
 
 
-function mostrarAviso(){
-    alert("Han pasado los tres segundos");
-}
+// function mostrarAviso(){
+//     alert("Han pasado los tres segundos");
+// }
