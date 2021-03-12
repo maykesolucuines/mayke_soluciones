@@ -28,9 +28,9 @@ const options = {
   clean: true,
 }
 // WebSocket connect url
-// const WebSocket_URL = 'wss://ioticos.org:8094/mqtt'
+const WebSocket_URL = 'wss://ioticos.org:8094/mqtt'
 //const WebSocket_URL = 'wss://broker.shiftr.io:443/mqtt'
-const WebSocket_URL = 'ws://broker.hivemq.com:8000/mqtt'
+// const WebSocket_URL = 'ws://broker.hivemq.com:8000/mqtt'
 
 
 
