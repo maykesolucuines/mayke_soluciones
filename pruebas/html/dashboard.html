@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>CBI casa de DIOS</title>
+  <meta name="description" content="Admin, Dashboard, Bootstrap, Bootstrap 4, Angular, AngularJS" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- for ios 7 style, multi-resolution icon of 152x152 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+  <link rel="apple-touch-icon" href="../assets/images/cbiCasadeDios.ico">
+  <meta name="apple-mobile-web-app-title" content="Flatkit">
+  <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" sizes="196x196" href="../assets/images/cbiCasadeDios.ico">
+
+  <!-- style -->
+  <link rel="stylesheet" href="../assets/animate.css/animate.min.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/glyphicons/glyphicons.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../assets/material-design-icons/material-design-icons.css" type="text/css" />
+
+  <link rel="stylesheet" href="../assets/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+  <!-- build:css ../assets/styles/app.min.css -->
+  <link rel="stylesheet" href="../assets/styles/app.css" type="text/css" />
+  <!-- endbuild -->
+  <link rel="stylesheet" href="../assets/styles/font.css" type="text/css" />
+
+</head>
+<body>
+  <div class="app" id="app">
+
+    <!-- ############ LAYOUT START-->
+
+    <!-- aside -->
+    <div id="aside" class="app-aside modal nav-dropdown">
+      <!-- fluid app aside -->
+      <div class="left navside dark dk" data-layout="column">
+        <div class="navbar no-radius">
+          <!-- brand -->
+          <a class="navbar-brand">
+            <div ui-include="'../assets/images/logo.svg'"></div>
+            <img src="../assets/images/logo.png" alt="." class="hide">
+            <span class="hidden-folded inline">CBI</span>
+            <br>
+            <span class="hidden-folded inline">Control</span>
+          </a>
+          <!-- / brand -->
+        </div>
+        <div class="hide-scroll" data-flex>
+          <nav class="scroll nav-light">
+
+            <ul class="nav" ui-nav>
+              <li class="nav-header hidden-folded">
+                <small class="text-muted">Principal</small>
+              </li>
+
+              <li>
+                <a href="dashboard.html" >
+                  <span class="nav-icon">
+                    <i class="material-icons">&#xe3fc;
+                      <span ui-include="'../assets/images/i_0.svg'"></span>
+                    </i>
+                  </span>
+                  <span class="nav-text">Pagina principal</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="calendar.html" >
+                  <span class="nav-icon">
+                    <i class="material-icons">&#xe5c3;
+                      <span ui-include="'../assets/images/i_1.svg'"></span>
+                    </i>
+                  </span>
+                  <span class="nav-text">Calendario</span>
+                </a>
+                <ul class="nav-sub">
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="b-t">
+          <div class="nav-fold">
+            <a href="">
+              <span class="pull-left">
+                <img src="../assets/images/familia.jpg" alt="..." class="w-40 img-circle">
+              </span>
+              <span class="clear hidden-folded p-x">
+                <span class="block _500">CBI CASA DE DIOS</span>
+                <small class="block text-muted"><i class="fa fa-circle text-success m-r-sm"></i>online</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- content -->
+    <div id="content" class="app-content box-shadow-z0" role="main">
+      <div class="app-header white box-shadow">
+        <div class="navbar navbar-toggleable-sm flex-row align-items-center">
+          <!-- Open side - Naviation on mobile -->
+          <a data-toggle="modal" data-target="#aside" class="hidden-lg-up mr-3">
+            <i class="material-icons">&#xe5d2;</i>
+          </a>
+          <!-- / -->
+
+          <span id="display_conexion">Conectado </span>
+
+
+          <!-- Page title - Bind to $state's title -->
+          <div class="mb-0 h5 no-wrap" ng-bind="$state.current.data.title" id="pageTitle"></div>
+
+          <!-- navbar collapse -->
+          <div class="collapse navbar-collapse" id="collapse">
+            <!-- link and dropdown -->
+
+
+            <!-- / -->
+          </div>
+          <!-- / navbar collapse -->
+
+          <!-- navbar right -->
+          <ul class="nav navbar-nav ml-auto flex-row">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link p-0 clear" href="#" data-toggle="dropdown">
+                <span class="avatar w-32">
+                  <img src="../assets/images/familia.jpg" alt="...">
+                  <i class="on b-white bottom"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <!-- / navbar right -->
+        </div>
+      </div>
+
+      <a class="nav-link" href=""../"">
+        <span class="hidden-xs-down btn btn-sm rounded danger text-u-c _600">
+          Sign Up
+        </span>
+        <span class="hidden-sm-up btn btn-sm btn-icon rounded danger">
+          <i class="material-icons"></i>
+        </span>
+      </a>
+
+
+      <div class="app-footer">
+        <div class="p-2 text-xs">
+          <div class="nav">
+            <a class="nav-link" href="signin.html">
+              <span class="hidden-xs-down btn btn-sm rounded danger text-u-c _600">
+                SALIR
+              </span>
+              <span class="hidden-sm-up btn btn-sm btn-icon rounded danger">
+                <i class="material-icons"></i>
+                <h4>X</h4>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div ui-view class="app-body" id="view">
+
+        <!-- ############ PAGE START-->
+        <div class="p-a white lt box-shadow">
+          <div class="row">
+            <div class="col-sm-6">
+              <h3 class="mb-0 _300">Bienvenido</h3>
+              <small class="text-muted">CONTROL <strong>v1.0.0</strong> Luces CBI</small>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="padding">
+          <div class="row">
+            <div class="col-xs-6 col-sm-7">
+
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw1_change()" type="checkbox" class="has-value" id="display_sw1">
+                  <i class="blue"></i>
+                  LAMPARA UNO
+                </label>
+
+              </div>
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw2_change()" type="checkbox" class="has-value" id="display_sw2">
+                  <i class="blue"></i>
+                  LAMPARA DOS
+                </label>
+              </div>
+
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw3_change()" type="checkbox" class="has-value" id="display_sw3">
+                  <i class="blue"></i>
+                  LAMPARA TRES
+                </label>
+              </div>
+
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw4_change()" type="checkbox" class="has-value" id="display_sw4">
+                  <i class="blue"></i>
+                  LAMPARA CUATRO
+                </label>
+              </div>
+
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw5_change()" type="checkbox" class="has-value" id="display_sw5">
+                  <i class="blue"></i>
+                  LAMPARA CINCO
+                </label>
+              </div>
+
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw6_change()" type="checkbox" class="has-value" id="display_sw6">
+                  <i class="blue"></i>
+                  LAMPARA SEIS
+                </label>
+
+              </div>
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw7_change()" type="checkbox" class="has-value" id="display_sw7">
+                  <i class="blue"></i>
+                  LAMPARA SIETE
+                </label>
+              </div>
+
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw8_change()" type="checkbox" class="has-value" id="display_sw8">
+                  <i class="blue"></i>
+                  LAMPARA OCHO
+                </label>
+              </div>
+
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw9_change()" type="checkbox" class="has-value" id="display_sw9">
+                  <i class="blue"></i>
+                  LAMPARA NUEVE
+                </label>
+              </div>
+
+              <div class="box p-a">
+                <label class="md-switch">
+                  <input onchange="sw10_change()" type="checkbox" class="has-value" id="display_sw10">
+                  <i class="blue"></i>
+                  LAMPARA DIEZ
+                </label>
+              </div>
+
+
+              <!-- SWITCH
+              <div class="box p-a">
+                <span class="mdl-list__item-primary-content list__item-text">DISPONIBLE. UNO </span>
+                  <label class="md-switch">
+                      <input onchange="sw11_change()" type="checkbox" class="has-value" id="display_sw11">
+                        <i class="blue"></i>
+                    </label>
+                  </label>
+                </div>
+
+                -->
+
+              <!-- ############ PAGE END-->
+          </div>
+          <!-- / -->
+
+          <!-- CONFIG COLOR DE TEMA FONDO -->
+          <div id="switcher">
+            <div class="switcher box-color dark-white text-color" id="sw-theme">
+              <a href ui-toggle-class="active" target="#sw-theme" class="box-color dark-white text-color sw-btn">
+                <i class="fa fa-gear"></i>
+              </a>
+              <div class="box-header">
+                <h2>TEMAS DE FONDOS</h2>
+              </div>
+              <div class="box-divider"></div>
+              <div class="box-body">
+                <p>Colores:</p>
+                <div data-target="bg" class="row no-gutter text-u-c text-center _600 clearfix">
+                  <label class="p-a col-sm-6 light pointer m-0">
+                    <input type="radio" name="theme" value="" hidden>
+                    Light
+                  </label>
+                  <label class="p-a col-sm-6 grey pointer m-0">
+                    <input type="radio" name="theme" value="grey" hidden>
+                    Grey
+                  </label>
+                  <label class="p-a col-sm-6 dark pointer m-0">
+                    <input type="radio" name="theme" value="dark" hidden>
+                    Dark
+                  </label>
+                  <label class="p-a col-sm-6 black pointer m-0">
+                    <input type="radio" name="theme" value="black" hidden>
+                    Black
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / -->
+
+          <!-- ############ LAYOUT END-->
+
+        </div>
+
+        <!-- build:js scripts/app.html.js -->
+        <!-- jQuery -->
+        <script src="../libs/jquery/jquery/dist/jquery.js"></script>
+        <!-- Bootstrap -->
+        <script src="../libs/jquery/tether/dist/js/tether.min.js"></script>
+        <script src="../libs/jquery/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- core -->
+        <script src="../libs/jquery/underscore/underscore-min.js"></script>
+        <script src="../libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
+        <script src="../libs/jquery/PACE/pace.min.js"></script>
+
+        <script src="scripts/config.lazyload.js"></script>
+
+        <script src="scripts/palette.js"></script>
+        <script src="scripts/ui-load.js"></script>
+        <script src="scripts/ui-jp.js"></script>
+        <script src="scripts/ui-include.js"></script>
+        <script src="scripts/ui-device.js"></script>
+        <script src="scripts/ui-form.js"></script>
+        <script src="scripts/ui-nav.js"></script>
+        <script src="scripts/ui-screenfull.js"></script>
+        <script src="scripts/ui-scroll-to.js"></script>
+        <script src="scripts/ui-toggle-class.js"></script>
+
+        <script src="scripts/app.js"></script>
+
+        <!-- mis conexiones mqtt y datos -->
+        <script src="scripts/mqtt.min.js" type="text/javascript"></script>
+        <script src="scripts/conexionmqtt.js"></script>
+
+        <!-- ajax -->
+        <script src="../libs/jquery/jquery-pjax/jquery.pjax.js"></script>
+        <script src="scripts/ajax.js"></script>
+        <!-- endbuild -->
+      </body>
+      </html>
